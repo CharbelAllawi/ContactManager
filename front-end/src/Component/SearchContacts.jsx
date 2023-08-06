@@ -20,6 +20,7 @@ const SearchContacts = () => {
     }
   };
 
+
   useEffect(() => {
     searchContacts();
   }, []);
