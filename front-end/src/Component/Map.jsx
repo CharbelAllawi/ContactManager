@@ -48,3 +48,23 @@ export default function App() {
       console.error("Error fetching locations:", error);
     }
   };
+
+
+  return (
+    <MapContainer center={[48.8566, 2.3522]} zoom={13}>
+      {/* OPEN STREEN MAPS TILES */}
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+
+      <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
+        {locations.map((location, index) => (
+          < Marker key={index} position={[location.latitude, location.longitude]} icon={customIcon} >
+            <Popup>{`Location of ${location.user}`}</Popup>
+          </Marker>
+        ))}
+      </MarkerClusterGroup>
+    </MapContainer >
+  );
+}
