@@ -25,9 +25,6 @@ const SearchContacts = () => {
     searchContacts();
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
 
   return (
 
