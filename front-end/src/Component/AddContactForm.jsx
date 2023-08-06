@@ -45,6 +45,7 @@ const AddContactForm = ({ onAdd }) => {
     });
   };
 
+
   return (
     <div className="add-contact-form">
       <input
